@@ -38,10 +38,10 @@
 	{
 		if (!defaultDTCSSStylesheet)
 		{
-#if SWIFT_PACKAGE
-			// get resource bundle via macro
-			NSString *path = [SWIFTPM_MODULE_BUNDLE pathForResource:@"default" ofType:@"css"];
-#else
+//#if SWIFT_PACKAGE
+//			// get resource bundle via macro
+//			NSString *path = [SWIFTPM_MODULE_BUNDLE pathForResource:@"default" ofType:@"css"];
+//#else
 			NSBundle *bundle = [NSBundle bundleForClass:self];
 			NSString *path = [[NSBundle bundleForClass:self] pathForResource:@"default" ofType:@"css"];
 			
@@ -52,7 +52,7 @@
                 NSBundle *resourcesBundle = [NSBundle bundleWithPath:resourcesBundlePath];
                 path = [resourcesBundle pathForResource:@"default" ofType:@"css"];
             }
-#endif
+//#endif
 			
 			NSAssert(path != nil, @"Missing default.css");
 			
